@@ -16,13 +16,13 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 
-from socketio import sdjango
-sdjango.autodiscover()
 import os
 from djsocketio_example.settings import BASE_DIR
+import sampleapp.views
 
 urlpatterns = [
-	url(r'^static/(.*)$', 'django.views.static.serve', {'document_root': BASE_DIR+'/static/'}),
+	url(r'^$', sampleapp.views.home, name='home'),
+	# url(r'^static/(.*)$', 'django.views.static.serve', {'document_root': BASE_DIR+'/static/'}),
 	url(r'^admin/', include(admin.site.urls)),
 	url("", include('django_socketio.urls')),
 ]
