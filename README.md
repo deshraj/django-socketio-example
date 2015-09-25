@@ -9,15 +9,19 @@ Note: Since the current version of django-socketio does not work with the latest
 
       ``` git clone https://github.com/DESHRAJ/django-socketio-example.git ```
 
-2. Create virtual environment
+2. Get inside the virtual environment
+
+	``` soruce env/bin/activate ```
+
+3. Create virtual environment
 
 	``` cd django-socketio-example && virtualenv env```
 
-3. Install the dependenices
+4. Install the dependenices
 
 	``` pip install -r requirements.txt ``` 
 
-4. Start the server
+5. Start the server
 
 	``` python manage.py runserver_socketio ```
 
