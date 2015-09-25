@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Django Socket Example</title>
-    {% load socketio_tags %}
-    {% socketio %}
-    <script>
-        var socket = new io.Socket();
-        socket.connect();
-    </script>
-</head>
-<body>
-<h1>Welcome to Django Socketio testing </h1>	
-</body>
+	<head>
+		<title>Django Socket Example</title>
+		{% load socketio_tags %}
+		{% socketio %}
+		<script>
+			var socket = new io.Socket();
+			socket.connect();
+		</script>
+	</head>
+	<body>
+		<h1>Welcome to Django Socketio testing </h1>	
+	</body>
 </html>
