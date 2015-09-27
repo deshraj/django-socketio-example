@@ -7,9 +7,28 @@
 		<script>
 			var socket = new io.Socket();
 			socket.connect();
+			socket.on('connect', function() {
+				socket.subscribe('progress');
+				console.log(socket);
+			});
 		</script>
 	</head>
 	<body>
-		<h1>Welcome to Django Socketio testing </h1>	
+		<h1>Welcome to Django Socketio testing </h1>
+		<a href="/message">Go to see the new messages</a>	
 	</body>
+	<script src="https://code.jquery.com/jquery-git2.min.js"></script>
+<!-- <script src="/static/js/socket.io.js"></script> -->
+<script>
+
+		socket.on('message', function(message){
+			console.log(message);
+			if(message.socketid)
+			{
+				console.log("message transferred using message in sockets");
+			}
+		});
+</script>
+
 </html>
+

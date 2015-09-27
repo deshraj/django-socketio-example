@@ -25,4 +25,5 @@ urlpatterns = [
 	# url(r'^static/(.*)$', 'django.views.static.serve', {'document_root': BASE_DIR+'/static/'}),
 	url(r'^admin/', include(admin.site.urls)),
 	url("", include('django_socketio.urls')),
+	url("^message/$", sampleapp.views.message, name="message"),
 ]

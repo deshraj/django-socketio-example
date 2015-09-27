@@ -1,0 +1,31 @@
+{% load socketio_tags %}
+
+{% socketio %}
+<form method="post">
+    <input type="text" id="message" name="message" value="{{ request.POST.message }}">
+    <label for="room">Room:</label>
+    <select id="room" name="room">
+        <option value="">All Rooms</option>
+        <option selected value="Hello">Hello</option>
+        <option selected value="World">World</option>
+        <option selected value="Foo">Foo</option>
+        <option selected value="Bar">Bar</option>
+    </select>
+    <input type="submit" id="submit" value="Send">
+    {% csrf_token %}
+</form>
+
+
+
+<script type="text/javascript">
+    var socket = new io.Socket();
+        socket.connect();
+        socket.on('message', function(message){
+            // console.log(message);
+            if(message.socketid)
+            {
+                console.log("message transferred using message in sockets");
+            }
+        });
+</script>
+

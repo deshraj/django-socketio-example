@@ -104,7 +104,7 @@ STATIC_URL = '/static/'
 
 # MEDIA_URL = '/media/'
 
-SOCKETIO_HOST = 'localhost'
+SOCKETIO_HOST = '0.0.0.0'
 
 SOCKETIO_PORT = 8000
 
